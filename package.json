@@ -1,7 +1,7 @@
 {
-  "name": "@metamask/contract-metadata",
-  "version": "1.29.0",
-  "description": "A mapping of ethereum contract addresses to broadly accepted icons for those addresses.",
+  "name": "@starcoin/contract-metadata",
+  "version": "0.1.0",
+  "description": "A mapping of starcoin contract addresses to broadly accepted icons for those addresses.",
   "main": "index.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -15,19 +15,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/MetaMask/contract-metadata.git"
+    "url": "git+ssh://git@github.com/starcoinorg/starmask-contract-metadata.git"
   },
   "keywords": [
-    "ethereum",
+    "starcoin",
     "contract",
     "icons"
   ],
   "author": "Dan Finlay <dan@danfinlay.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MetaMask/contract-metadata/issues"
+    "url": "https://github.com/starcoinorg/starmask-contract-metadata/issues"
   },
-  "homepage": "https://github.com/MetaMask/contract-metadata#readme",
+  "homepage": "https://github.com/starcoinorg/starmask-contract-metadata#readme",
   "files": [
     "index.js",
     "contract-map.json",
