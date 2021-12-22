@@ -1,22 +1,16 @@
-# @metamask/contract-metadata
+# @starcoin/starmask-contract-metadata
 
-A mapping of checksummed Ethereum contract addresses to metadata, like names, and images of their logos.
-
-All address keys follow the [EIP 55 address checksum format](https://github.com/ethereum/EIPs/issues/55).
-
-This repository is effectively frozen. We recommend that developers of new tokens use [EIP 747](https://docs.metamask.io/guide/registering-your-token.html) to ask the user's permission to display your tokens in their wallet. This reduces the dangers of airdrop-based phishing, and reduces administrative overhead from managing this list.
+A mapping of checksummed Starcoin contract addresses to metadata, like names, and images of their logos.
 
 ## Usage
 
-You can install from npm with `npm install @metamask/contract-metadata` and use it in your code like this:
+You can install from npm with `npm install @starcoin/starmask-contract-metadata` and use it in your code like this:
 
 ```javascript
-import contractMap from '@metamask/contract-metadata'
-import ethJSUtil from 'ethereumjs-util'
-const { toChecksumAddress } = ethJSUtil
+import contractMap from '@starcoin/starmask-contract-metadata'
 
-function imageElFor (address) {
-  const metadata = contractMap[toChecksumAddress(address)]
+function imageElFor (code) {
+  const metadata = contractMap[code]
   if (metadata?.logo) {
     const fileName = metadata.logo
     const path = `${__dirname}/images/contract/${fileName}`
@@ -27,7 +21,7 @@ function imageElFor (address) {
   }
 }
 
-imageElFor ("0x06012c8cf97BEaD5deAe237070F9587f8E7A266d")
+imageElFor ("0x06012c8cf97BEaD5deAe237070F9587f8E7A266d::XXX::XXX")
 ```
 
 ## Submission Process
@@ -45,23 +39,19 @@ Criteria:
 - PR should include link to official project website referencing the suggested address.
 - Project website should include explanation of project.
 - Project should have clear signs of activity, either traffic on the network, activity on GitHub, or community buzz.
-- Nice to have a verified source code on a block explorer like Etherscan.
-- Must have a ['NEUTRAL' reputation or 'OK' reputation](https://info.etherscan.com/etherscan-token-reputation) on Etherscan.
+- Nice to have a verified source code on a block explorer like Stcscan.
 
 A sample submission:
 
 ```json
 {
-  "0x6090A6e47849629b7245Dfa1Ca21D94cd15878Ef": {
+  "0x6090A6e47849629b7245Dfa1Ca21D94cd15878Ef::ENS::ENS": {
     "name": "ENS Registrar",
-    "logo": "ens.svg"
+    "logo": "ens.svg",
+    "symbol": "ENS",
+    "decimals": 18
   }
 }
 ```
-
-Tokens should include a field `"erc20": true`, and can include additional fields:
-
-- symbol (a five-character or less ticker symbol)
-- decimals (precision of the tokens stored)
 
 A full list of permitted fields can be found in the [permitted-fields.json](./permitted-fields.json) file.
