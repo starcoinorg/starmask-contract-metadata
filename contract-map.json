@@ -1,8 +1,14 @@
 {
-  "0xfe125d419811297dfab03c61efec0bc9::FAI::FAI": {
+  "0x4ffcc98f43ce74668264a0cf6eebe42b::FAI::FAI": {
     "name": "FAI",
-    "logo": "fai.jpeg",
+    "logo": "fai.png",
     "symbol": "FAI",
+    "decimals": 9
+  },
+  "0x8c109349c6bd91411d6bc962e080c4a3::STAR::STAR": {
+    "name": "STAR",
+    "logo": "star.svg",
+    "symbol": "STAR",
     "decimals": 9
   }
 }
